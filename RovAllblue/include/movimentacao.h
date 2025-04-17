@@ -11,6 +11,9 @@ class Movimentacao{
         float Kp;
         float Ki;
         float Kd;
+        imu mpu;
+        Motor motor1;
+        Motor motor2;
         void start(){
             data.start();
         };
@@ -19,7 +22,7 @@ class Movimentacao{
             std::vector<double> dados = data.getDados();
             alturaT = dados[0];
         };
-        double getAltura(Data d);
-        void controleAlt(Data d);
-        void controleF(Data d, imu mpu, Motor motor1, Motor motor2);
+        double getAltura();
+        void controleAlt();
+        void controleF();
 };

@@ -23,8 +23,8 @@ public:
         sensor.startContinuous(); // Inicia modo contínuo
     }
 
-    int getAltura() {
-        int altura = sensor.readRangeContinuousMillimeters();
+    double getAltura() {
+        double altura = sensor.readRangeContinuousMillimeters();
 
         return altura;
     }

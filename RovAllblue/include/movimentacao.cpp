@@ -11,13 +11,13 @@ T clamp(T valor, T minimo, T maximo) {
     return std::max(minimo, std::min(valor, maximo));
 }
 
-double Movimentacao::getAltura(Data d){
+double Movimentacao::getAltura(){
     std::vector<double> dados = d.getDados();
     double altura = dados[0];
     return altura;
 };
 
-void Movimentacao::controleAlt(Data d){
+void Movimentacao::controleAlt(){
     float integral = 0;
     float derivada = 0;
     float prevErro = 0;
@@ -39,7 +39,7 @@ void Movimentacao::controleAlt(Data d){
     };
 };
 
-void Movimentacao::controleF(Data d, imu mpu, Motor motor1, Motor motor2){
+void Movimentacao::controleF(){
     float integral = 0;
     float prevErro = 0;
     long tempoAnterior = 0;

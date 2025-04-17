@@ -5,10 +5,12 @@ class ServoController {
       int pin;
       ESP32PWM pwm;
       int angle; // Store the current angle (in degrees)
+      int freq;
+      int newAngle;
   
     public:
       // Constructor that initializes the pin and frequency
-      ServoController(int pin, int freq) {
+      ServoController() {
           this->pin = pin;
           this->angle = 0; // Initially, the servo is at 0 degrees
           ESP32PWM::allocateTimer(0); // Allocate the timer
@@ -16,7 +18,7 @@ class ServoController {
       }
   
       // Method to write the servo angle (in the range 0° to 180°)
-      void writeAngle(int newAngle) {
+      void writeAngle() {
           // Clamp the value to the range [0, 180]
           if (newAngle < 0) newAngle = 0;
           if (newAngle > 180) newAngle = 180;
